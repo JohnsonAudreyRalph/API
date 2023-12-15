@@ -67,11 +67,6 @@ def my_api_view(request):
     if serializer.is_valid():
         # Xử lý dữ liệu nếu hợp lệ
         validated_data = serializer.validated_data
-        # Thực hiện các thao tác mong muốn với dữ liệu ở đây
-        # Ví dụ: lấy các giá trị từ validated_data
-        name = validated_data.get('name')
-        age = validated_data.get('age')
-        gender = validated_data.get('gender')
 
         if serializer.is_valid():
             serializer.save()
@@ -83,9 +78,6 @@ def my_api_view(request):
         return JsonResponse({
             'message': 'Lỗi, cập nhật không thành công!'
         }, status=status.HTTP_400_BAD_REQUEST)
-        
-        # # Trả về kết quả, ở đây là thông tin đã xử lý (có thể là dictionary hoặc thông tin khác)
-        # return Response({'message': 'Data received', 'name': name, 'age': age, 'gender': gender})
     else:
         # Nếu dữ liệu không hợp lệ, trả về lỗi hoặc thông báo lỗi
         return Response(serializer.errors, status=400)
