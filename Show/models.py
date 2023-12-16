@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Data_API(models.Model):
+class Data_API_read(models.Model):
     vi_tri_1 = models.IntegerField(blank=True, null=True)
     vi_tri_2 = models.IntegerField(blank=True, null=True)
     vi_tri_3 = models.IntegerField(blank=True, null=True)
@@ -88,6 +88,7 @@ class Data_API(models.Model):
     HieuSuat_15 = models.CharField(max_length=20, blank=True, null=True)
     HieuSuat_16 = models.CharField(max_length=20, blank=True, null=True)
 
+class Data_API_read_write(models.Model):
     Chuyen_Mach_Bang_Tay = models.BooleanField(default=False)
-    Thoi_Gian_Chay_Chuyen_Mach = models.DateTimeField(auto_now=True)
-    Thoi_Gian_Tat_Chuyen_Mach = models.DateTimeField(auto_now=True)
+    Thoi_Gian_Chay_Chuyen_Mach = models.TimeField(auto_now=True)
+    Thoi_Gian_Tat_Chuyen_Mach = models.TimeField(auto_now=True)
