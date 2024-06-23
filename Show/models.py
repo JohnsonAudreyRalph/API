@@ -90,5 +90,5 @@ class Data_API_read(models.Model):
 
 class Data_API_read_write(models.Model):
     Chuyen_Mach_Bang_Tay = models.BooleanField(default=False)
-    Thoi_Gian_Chay_Chuyen_Mach = models.TimeField(auto_now=True)
-    Thoi_Gian_Tat_Chuyen_Mach = models.TimeField(auto_now=True)
+    Thoi_Gian_Chay_Chuyen_Mach = models.IntegerField(blank=True, null=True)
+    Thoi_Gian_Tat_Chuyen_Mach = models.IntegerField(blank=True, null=True)

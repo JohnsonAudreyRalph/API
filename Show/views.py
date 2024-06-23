@@ -93,9 +93,7 @@ def update_data_read_write(request):
         response = requests.get(url)
 
         if response.status_code == 200:
-            return JsonResponse({
-                'message': json.dumps(response.json()) 
-            }, status=status.HTTP_200_OK)
+            return JsonResponse(response.json(), safe=False)
 
         return JsonResponse({'message': 'Cập nhật thành công!'}, status=status.HTTP_200_OK)
 
